@@ -12,8 +12,14 @@ namespace CantuniasInferno
 
         public string Score => $"{score}/{scoreForWin}";
 
+        public void Pause(bool value)
+        {
+            Time.timeScale = value ? 0 : 1;
+        }
+
         void Awake()
         {
+            Pause(true);
             if (Instance == null)
                 Instance = this;
             else
